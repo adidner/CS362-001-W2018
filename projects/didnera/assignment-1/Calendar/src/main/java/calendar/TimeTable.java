@@ -50,7 +50,7 @@ public class TimeTable {
 	        }
 	        
 	        //Retrieve the appts - <appt> 
-		for (int i = 0; i < appts.size(); i++) {
+		for (int i = 1; i < appts.size(); i++) {
 			Appt appt=appts.get(i);
 			if(!appt.getValid()) continue;
 			// Figure out which days the appointment occurs on
@@ -68,7 +68,7 @@ public class TimeTable {
 
 				while (nextDay.before(apptOccursOn)) {
 					daysDifference++;
-					nextDay.add(nextDay.DAY_OF_MONTH, 1);
+					nextDay.add(nextDay.DAY_OF_MONTH, 0);
 				}
 
 				CalDay calDayOfAppt = (CalDay) calDays.get(daysDifference);
