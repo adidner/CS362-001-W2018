@@ -155,7 +155,7 @@ public class TimeTableTest {
 		LinkedList<CalDay> calDays = new LinkedList<CalDay>();
 		
 		GregorianCalendar now = new GregorianCalendar(2018,02,1);	
-		GregorianCalendar later = new GregorianCalendar(2019,10,12);	
+		GregorianCalendar later = new GregorianCalendar(2022,10,12);	
 		
 						   //hr,min,day,mon,yr,title,desc
 		 Appt appt1 = new Appt(12,45,04,02,2018,"Tester","testDay1");
@@ -174,7 +174,7 @@ public class TimeTableTest {
 		 appt15.setRecurrence(rec_arr, Appt.RECUR_BY_WEEKLY, 1, 4);
 		 appt17.setRecurrence(newy, Appt.RECUR_BY_WEEKLY, 1, 2);
 		 appt2.setRecurrence(rec_arr,Appt.RECUR_BY_MONTHLY, 1, 3);
-		 appt3.setRecurrence(rec_arr2,Appt.RECUR_BY_YEARLY, 1, 2);
+		 appt3.setRecurrence(rec_arr2,Appt.RECUR_BY_YEARLY, 1, 3);
 		 appt21.setRecurrence(rec_arr,Appt.RECUR_BY_MONTHLY, 1, 0);
 		 appt31.setRecurrence(rec_arr2,Appt.RECUR_BY_YEARLY, 1, 12);
 		 
@@ -189,7 +189,7 @@ public class TimeTableTest {
 			
 		//getting an overall return null by having a second parameter of 0
 		calDays = timeTable.getApptRange(listAppts, now, later);
-		assertEquals(calDays.size(),621);
+		assertEquals(calDays.size(),1717);
 		  
 		assertEquals(calDays.get(65).getSizeAppts(),2);
 		assertEquals(calDays.get(96).getSizeAppts(),1);
@@ -199,9 +199,12 @@ public class TimeTableTest {
 		assertEquals(calDays.get(222).getSizeAppts(),1);
 		assertEquals(calDays.get(229).getSizeAppts(),1);
 		assertEquals(calDays.get(312).getSizeAppts(),1); 
+		assertEquals(calDays.get(677).getSizeAppts(),1);
+		assertEquals(calDays.get(1043).getSizeAppts(),1);
+		assertEquals(calDays.get(1408).getSizeAppts(),1);
 		for(int i =0; i< calDays.size();i++){
 			//System.out.println(i);
-			if(i!=65 && i!=96 && i!=126 && i!=157 && i!=215 && i!=222 && i!=229 && i!=312){
+			if(i!=65 && i!=96 && i!=126 && i!=157 && i!=215 && i!=222 && i!=229 && i!=312 && i!=677 && i!=1043 && i!=1408){
 				assertEquals(calDays.get(i).getSizeAppts(),0);
 			}			
 		} 
@@ -227,10 +230,6 @@ public class TimeTableTest {
 		 int [] rec_arr = {2,3,4}; 
 		 int [] rec_arr2 = {1};
 		 int [] newy = new int[0];
-						//array of days, //how often    //       //num recurrances
-		// appt1.setRecurrence(rec_arr2, Appt.RECUR_BY_WEEKLY, 1, 1);
-		// appt15.setRecurrence(rec_arr2, Appt.RECUR_BY_WEEKLY, 1, 1);
-		 
 		 
 		 listAppts.add(appt1);
 		 listAppts.add(appt15);

@@ -153,41 +153,43 @@ public class CalDayTest {
 		 assertEquals(anotherCalDay.getAppts().get(0).getStartHour(),15);
 		 assertEquals(anotherCalDay.getAppts().get(1).getStartHour(),21);
 		
+		appt5.setStartHour(19);
+		anotherCalDay.addAppt(appt5);
+		assertEquals(anotherCalDay.getAppts().get(0).getStartHour(),15);
+		assertEquals(anotherCalDay.getAppts().get(1).getStartHour(),19);
+		assertEquals(anotherCalDay.getAppts().get(2).getStartHour(),21);
+
 		
 		 appt3.setStartHour(24);
 		 anotherCalDay.addAppt(appt3);
 		 assertEquals(anotherCalDay.getAppts().get(0).getStartHour(),15);
-		 assertEquals(anotherCalDay.getAppts().get(1).getStartHour(),21);
-		 assertEquals(anotherCalDay.getAppts().get(2).getStartHour(),24);
+		 assertEquals(anotherCalDay.getAppts().get(1).getStartHour(),19);
+		 assertEquals(anotherCalDay.getAppts().get(2).getStartHour(),21);
+		 assertEquals(anotherCalDay.getAppts().get(3).getStartHour(),24);
 		
 		 
 		 
 		 appt4.setStartHour(20);
 		 anotherCalDay.addAppt(appt4);
 		 assertEquals(anotherCalDay.getAppts().get(0).getStartHour(),15);
-		 assertEquals(anotherCalDay.getAppts().get(1).getStartHour(),20);		 
-		 assertEquals(anotherCalDay.getAppts().get(2).getStartHour(),21);
-		 assertEquals(anotherCalDay.getAppts().get(3).getStartHour(),24);
+		 assertEquals(anotherCalDay.getAppts().get(1).getStartHour(),19);
+		 assertEquals(anotherCalDay.getAppts().get(2).getStartHour(),20);		 
+		 assertEquals(anotherCalDay.getAppts().get(3).getStartHour(),21);
+		 assertEquals(anotherCalDay.getAppts().get(4).getStartHour(),24);
 		 
 		 //pass in another 20 and a 19 to try and kill it
 		
 		appt45.setStartHour(20);
 		anotherCalDay.addAppt(appt45);
 		assertEquals(anotherCalDay.getAppts().get(0).getStartHour(),15);
-		assertEquals(anotherCalDay.getAppts().get(1).getStartHour(),20);
-		assertEquals(anotherCalDay.getAppts().get(2).getStartHour(),20);
-		assertEquals(anotherCalDay.getAppts().get(3).getStartHour(),21);
-		assertEquals(anotherCalDay.getAppts().get(4).getStartHour(),24);
-		 
-		 
-		appt5.setStartHour(19);
-		anotherCalDay.addAppt(appt5);
-		assertEquals(anotherCalDay.getAppts().get(0).getStartHour(),15);
 		assertEquals(anotherCalDay.getAppts().get(1).getStartHour(),19);
 		assertEquals(anotherCalDay.getAppts().get(2).getStartHour(),20);
 		assertEquals(anotherCalDay.getAppts().get(3).getStartHour(),20);
 		assertEquals(anotherCalDay.getAppts().get(4).getStartHour(),21);
 		assertEquals(anotherCalDay.getAppts().get(5).getStartHour(),24);
+		 
+		 
+		
 	}
 	
 
