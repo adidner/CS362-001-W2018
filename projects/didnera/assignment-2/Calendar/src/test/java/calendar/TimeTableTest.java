@@ -202,7 +202,7 @@ public class TimeTableTest {
 			LinkedList<CalDay> calDays = new LinkedList<CalDay>();
 			
 			calDays = timeTable.getApptRange(listAppts, today, tomorrow); 
-			assertEquals(29,timeTable.getApptRange(listAppts, today, tomorrow).size());
+			assertEquals(32,timeTable.getApptRange(listAppts, today, tomorrow).size());
 	  }
 	
 
@@ -325,7 +325,7 @@ public class TimeTableTest {
 			LinkedList<CalDay> calDays = new LinkedList<CalDay>();
 			
 			calDays = timeTable.getApptRange(listAppts, today, tomorrow); 
-			assertEquals(29,timeTable.getApptRange(listAppts, today, tomorrow).size());
+			assertEquals(32,timeTable.getApptRange(listAppts, today, tomorrow).size());
 	  }
 	  @Test
 	  public void test011()  throws Throwable  {

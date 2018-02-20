@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.048" errors="0" skipped="0" tests="4" name="calendar.ApptRandomTest">
+<testsuite failures="0" time="0.056" errors="0" skipped="0" tests="5" name="calendar.ApptRandomTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_79\jre\bin"/>
@@ -63,8 +63,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.019" classname="calendar.ApptRandomTest" name="radnomtestHour"/>
-  <testcase time="0.002" classname="calendar.ApptRandomTest" name="radnomtestMinute"/>
-  <testcase time="0.011" classname="calendar.ApptRandomTest" name="radnomtestMonth"/>
-  <testcase time="0.016" classname="calendar.ApptRandomTest" name="radnomtestDay"/>
+  <testcase time="0.015" classname="calendar.ApptRandomTest" name="radnomtestHour"/>
+  <testcase time="0.001" classname="calendar.ApptRandomTest" name="radnomtestMinute"/>
+  <testcase time="0.007" classname="calendar.ApptRandomTest" name="radnomtestMonth2"/>
+  <testcase time="0.012" classname="calendar.ApptRandomTest" name="radnomtestMonth"/>
+  <testcase time="0.021" classname="calendar.ApptRandomTest" name="radnomtestDay"/>
 </testsuite>

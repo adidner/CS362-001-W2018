@@ -230,5 +230,30 @@ public class ApptRandomTest {
 		}		  
 	  }
 	  
+	  @Test
+	  public void radnomtestMonth2()  throws Throwable  {	
+		long randomseed =System.currentTimeMillis(); //10
+				Random random = new Random(randomseed);
+		
+		for(int i =0; i< 1000;i++){
+				
+				try{
+					 int startHour=2;
+					 int startMinute=2;
+					 int startDay=2;
+					 int startMonth=ValuesGenerator.getRandomIntBetween(random,-50,50);;
+					 int startYear=2;
+					 String title="Birthday Party";
+					 String description="This is my birthday party.";
+					 //Construct a new Appointment object with the initial data	 
+					 Appt appt = new Appt(startHour,startMinute,startDay,startMonth,startYear,title,description);
+					  appt.setRecurrence( null, Appt.RECUR_BY_WEEKLY, 2, Appt.RECUR_NUMBER_FOREVER);
+				}
+				catch(ArrayIndexOutOfBoundsException e){
+					
+				}
+		}		  
+	  }
+	  
 	 	
 }

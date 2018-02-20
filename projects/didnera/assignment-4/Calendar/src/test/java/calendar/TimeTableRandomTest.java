@@ -140,7 +140,7 @@ public class TimeTableRandomTest {
 	  public void radnomtestDelete()  throws Throwable  {
 		 long randomseed =System.currentTimeMillis(); //10
 		Random random = new Random(randomseed);
-		 for(int i = 0; i < 100;i++){
+		 for(int i = 0; i < 9000;i++){
 				//testing deleteAppt()
 		  LinkedList<Appt> listAppts = new LinkedList<Appt>();
 			
@@ -261,9 +261,65 @@ public class TimeTableRandomTest {
 		 
 		 
 	 }
+	 
+	 
+	 	 @Test 
+	  public void radnomtestDeleteIncreadCollisiontest()  throws Throwable  {
+		 long randomseed =System.currentTimeMillis(); //10
+		Random random = new Random(randomseed);
+		 for(int i = 0; i < 9000;i++){
+				//testing deleteAppt()
+		  LinkedList<Appt> listAppts = new LinkedList<Appt>();
+			
+								//hr,min,day,mon,yr,title,desc
+			int randomyear=ValuesGenerator.getRandomIntBetween(random,2016,2025);
+			int randomhour=ValuesGenerator.getRandomIntBetween(random,2,22);
+			int randommonth=ValuesGenerator.getRandomIntBetween(random,1,12);
+			int randomday=ValuesGenerator.getRandomIntBetween(random,1,31);
+							   //hr,min,day,mon,yr,title,desc
+			 Appt appt1 = new Appt(randomhour,45,randomday,randommonth,randomyear,"Tester","testDay1");
+			 
+			randomyear=ValuesGenerator.getRandomIntBetween(random,2016,2025);
+			 Appt appt17 = new Appt(randomhour,45,randomday,randommonth,randomyear,"Tester","testDay1");
+			 
+			randomyear=ValuesGenerator.getRandomIntBetween(random,2016,2025);
+			randomhour=ValuesGenerator.getRandomIntBetween(random,1,23);
+			 Appt appt2 = new Appt(randomhour,45,randomday,randommonth,randomyear,"Testing2","testDay2");
+			 
+			randomyear=ValuesGenerator.getRandomIntBetween(random,2016,2025);
+			randomday=ValuesGenerator.getRandomIntBetween(random,1,31);
+			 Appt appt3 = new Appt(randomhour,45,randomday,randommonth,randomyear,"Testing3","testDay3");
+			 
+			randomyear=ValuesGenerator.getRandomIntBetween(random,2016,2025);
+			 Appt appt21 = new Appt(randomhour,45,randomday,randommonth,randomyear,"Testing2","testDay2");
+			 
+			randomyear=ValuesGenerator.getRandomIntBetween(random,2016,2025);
+			randomhour=ValuesGenerator.getRandomIntBetween(random,1,26);
+			randommonth=ValuesGenerator.getRandomIntBetween(random,1,12);
+			randomday=ValuesGenerator.getRandomIntBetween(random,1,20);
+			 Appt appt31 = new Appt(randomhour,45,randomday,randommonth,randomyear,"Testing3","testDay3");
+			  
+			listAppts.add(appt1);
+			listAppts.add(appt17);
+			listAppts.add(appt2);
+			listAppts.add(appt3); 	
+			listAppts.add(appt21);
+			
+			 TimeTable timeTable=new TimeTable();
+			
+			
+			//delete a particular appointment from the list
+			LinkedList<Appt> listDeletedAppts=timeTable.deleteAppt(listAppts, listAppts.get(1));
+			
+			
+			 
+		 }
+		 
+		 
+	 }
 	
 	
-	 @Test 
+	 /* @Test 
 	  public void radnomtestDelete2()  throws Throwable  {
 		 long randomseed =System.currentTimeMillis(); //10
 		Random random = new Random(randomseed);
@@ -400,5 +456,5 @@ public class TimeTableRandomTest {
 		 }
 		 
 		 
-	 }
+	 }*/
 }
