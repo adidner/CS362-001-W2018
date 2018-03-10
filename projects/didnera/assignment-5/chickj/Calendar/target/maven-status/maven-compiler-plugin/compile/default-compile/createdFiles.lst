@@ -1,6 +1,0 @@
-calendar\TimeTable.class
-calendar\CalendarMain.class
-calendar\CalendarUtil.class
-calendar\CalDay.class
-calendar\DateOutOfRangeException.class
-calendar\Appt.class
