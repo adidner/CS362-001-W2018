@@ -25,7 +25,7 @@ import junit.framework.TestCase;
 public class UrlValidatorTest extends TestCase {
 
    private final boolean printStatus = false;
-   private final boolean printIndex = false;//print index that indicates current scheme,host,port,path, query test were using.
+   private final boolean printIndex = false;//print index that indicates current scheme,host,port,path,query test were using.
 
    public UrlValidatorTest(String testName) {
       super(testName);
@@ -81,19 +81,20 @@ protected void setUp() {
     * @param testObjects Used to create a url.
     */
    public void testIsValid(Object[] testObjects, long allowAllSchemes) {
-	      UrlValidator urlVal = new UrlValidator(null, null, allowAllSchemes);
+	  UrlValidator urlVal = new UrlValidator(null, null, allowAllSchemes);//creating a UrlValidator object, where the contents of the Valid Schemes array is ignored allowing all schemes
 	      //UrlValidator urlVal = new UrlValidator(null, allowAllSchemes);
-      assertTrue(urlVal.isValid("http://www.google.com"));
+      assertTrue(urlVal.isValid("http://www.google.com"));//testing two basic obviously valid URL's
       assertTrue(urlVal.isValid("http://www.google.com/"));
       int statusPerLine = 60;
       int printed = 0;
-      if (printIndex)  {
+	  int counter=0;
+      if (printIndex){
          statusPerLine = 6;
       }
       do {
           StringBuilder testBuffer = new StringBuilder();
          boolean expected = true;
-         for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {
+         for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {//loop through the the testPartsIndex array which has 5 numbers and will determine a new permutation
             int index = testPartsIndex[testPartsIndexIndex];
             ResultPair[] part = (ResultPair[]) testObjects[testPartsIndexIndex];
             testBuffer.append(part[index].item);
@@ -103,7 +104,7 @@ protected void setUp() {
          boolean result = urlVal.isValid(url);
          if(result == true)
         	 System.out.println(url);
-         assertEquals(url, expected, result);
+         assertEquals(url, expected, result);//testing that the url is not NULL (not 0), and both expected and result are true
          if (printStatus) {
             if (printIndex) {
                System.out.print(testPartsIndextoString());
@@ -120,10 +121,12 @@ protected void setUp() {
                printed = 0;
             }
          }
-      } while (incrementTestPartsIndex(testPartsIndex, testObjects));
+		 counter++;
+      } while (incrementTestPartsIndex(testPartsIndex, testObjects));//increments a part of the test parts index array which, will determine a new random shuffle 
       if (printStatus) {
          System.out.println();
       }
+	  System.out.println(counter);
    }
 
    public void testValidator202() {
@@ -156,7 +159,6 @@ protected void setUp() {
          }
          maxIndex &= (index == (part.length - 1));
       }
-
 
       return (!maxIndex);
    }
