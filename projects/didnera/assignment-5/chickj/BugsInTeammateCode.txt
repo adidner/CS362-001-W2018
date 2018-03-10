@@ -1,0 +1,8 @@
+Bug1
+	Line 86 in the CalDay.java file
+	The method isValid(), returns !valid rather than valid
+
+Bug2
+	Line 51 in the TimeTable.java file
+	The method getApptRange(), the if statement if(appt.getValid()) continue;
+	should be written as if(!appt.getValid()) continue;
